@@ -1,0 +1,71 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+.env.*
+*.key
+
+# PyTorch / model checkpoints
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+
+# Cache files
+cache/
+.cache/
+processed_300w/
+*.npy
+*.npz
+
+# Outputs / evaluation results
+test/
+runs/
+outputs/
+results/
+logs/
+
+# TensorBoard / wandb
+events.out.tfevents*
+wandb/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data
+data/
+datasets/
+*.h5
+*.hdf5
+
+# DeepLake local cache, if any
+.deeplake/
+hub/
+
+# LaTeX auxiliary files, if your report is in the repo
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
