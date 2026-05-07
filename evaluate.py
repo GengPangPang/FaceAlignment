@@ -41,6 +41,14 @@ REGIONS = {
 def load_checkpoint(model, path, device):
     ckpt = torch.load(path, map_location=device)
 
+    print("Loaded checkpoint:", path)
+    if isinstance(ckpt, dict):
+        print("checkpoint keys:", ckpt.keys())
+        print("checkpoint epoch:", ckpt.get("epoch"))
+        print("checkpoint avg_loss:", ckpt.get("avg_loss"))
+        print("checkpoint best_loss:", ckpt.get("best_loss"))
+        print("checkpoint best_epoch:", ckpt.get("best_epoch"))
+
     if isinstance(ckpt, dict):
         if "model_state_dict" in ckpt:
             state_dict = ckpt["model_state_dict"]
@@ -174,7 +182,7 @@ def evaluate():
         dataset,
         batch_size=EVAL_BATCH_SIZE,
         shuffle=False,
-        num_workers=4,
+        num_workers=0,
         pin_memory=(DEVICE == "cuda"),
     )
 
@@ -198,6 +206,21 @@ def evaluate():
                 IMG_SIZE,
                 use_quarter_offset=USE_QUARTER_OFFSET,
             )
+            if batch_idx == 0:
+                print("gt_hm min:", _gt_hm.min().item())
+                print("gt_hm max:", _gt_hm.max().item())
+                print("gt_hm mean:", _gt_hm.mean().item())
+                print("pred_hm min:", pred_hm.min().item())
+                print("pred_hm max:", pred_hm.max().item())
+                print("pred_hm mean:", pred_hm.mean().item())
+
+                print("pred_pts min:", pred_pts.min().item())
+                print("pred_pts max:", pred_pts.max().item())
+                print("pred_pts first sample:")
+                print(pred_pts[0].detach().cpu().numpy())
+
+                print("gt_pts min:", gt_pts.min().item())
+                print("gt_pts max:", gt_pts.max().item())
 
             nme = compute_nme(pred_pts, gt_pts, norm_type=NME_NORM_TYPE)
             all_nme.extend(nme.cpu().numpy())

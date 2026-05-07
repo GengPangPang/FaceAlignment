@@ -73,7 +73,8 @@ USE_QUARTER_OFFSET = True
 # -------------------------------
 # Evaluation settings
 # -------------------------------
-EVAL_CHECKPOINT_PATH = CHECKPOINT_DIR / "hrnet_epoch_200.pth"
+# EVAL_CHECKPOINT_PATH = CHECKPOINT_DIR / "hrnet_epoch_200.pth"
+EVAL_CHECKPOINT_PATH = CHECKPOINT_DIR / "best_epoch.pth"
 EVAL_OUT_DIR = TEST_DIR / "full_eval_epoch_200_fixed"
 EVAL_BATCH_SIZE = 16
 
