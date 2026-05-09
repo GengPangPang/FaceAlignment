@@ -1,13 +1,15 @@
 import os
 import torch
-import torch.nn as nn
+# import torch.nn as nn
 from tqdm import tqdm
 from torch.utils.data import DataLoader
+from losses.heatmap_loss import build_heatmap_loss
 
 from config import (
     DATASET_PATH,
     IMG_SIZE,
     HEATMAP_SIZE,
+    HEATMAP_SIGMA,
     NUM_LANDMARKS,
     DEVICE,
     BATCH_SIZE,
@@ -23,9 +25,14 @@ from config import (
     LOSS_LOG_PATH,
     PRETRAINED_PATH,
     CROP_SCALE,
-    HEATMAP_SIGMA,
     USE_DISK_CACHE,
     CACHE_DIR,
+
+    # 新增这些
+    LOSS_TYPE,
+    FOREGROUND_THRESHOLD,
+    FOREGROUND_WEIGHT,
+    JAW_WEIGHT,
 )
 from datasets.deeplake_300w import DeepLake300W
 from models.HRNet import hrnet_w18_face
@@ -73,7 +80,20 @@ def main():
 
     model = hrnet_w18_face(NUM_LANDMARKS, pretrained=PRETRAINED_PATH).to(DEVICE)
     optimizer = torch.optim.Adam(model.parameters(), lr=LR, weight_decay=WEIGHT_DECAY)
-    criterion = nn.MSELoss()
+    # criterion = nn.MSELoss()
+    criterion = build_heatmap_loss(
+        loss_type=LOSS_TYPE,
+        foreground_weight=FOREGROUND_WEIGHT,
+        threshold=FOREGROUND_THRESHOLD,
+        jaw_weight=JAW_WEIGHT,
+    ).to(DEVICE)
+
+    print("=" * 60)
+    print(f"Loss type: {LOSS_TYPE}")
+    print(f"Foreground threshold: {FOREGROUND_THRESHOLD}")
+    print(f"Foreground weight: {FOREGROUND_WEIGHT}")
+    print(f"Jaw weight: {JAW_WEIGHT}")
+    print("=" * 60)
 
     start_epoch = 0
     best_loss = float("inf")

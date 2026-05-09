@@ -1,0 +1,25 @@
+Checkpoint: /home/rum/projects/FaceLandmark/checkpoints/best_epoch.pth
+NME norm type: inter_ocular
+Use quarter offset: True
+Mean NME: 0.06746634095907211
+Median NME: 0.05368887633085251
+Failure@0.08: 0.18333333333333332
+AUC@0.08: 0.28704204204204203
+
+Per-region pixel error:
+jaw: 10.108235359191895
+right_eyebrow: 6.317367076873779
+left_eyebrow: 6.329885959625244
+nose: 4.604391574859619
+right_eye: 4.37222146987915
+left_eye: 4.551380157470703
+mouth: 6.27337646484375
+
+Per-region normalized error:
+jaw: 0.10196681320667267
+right_eyebrow: 0.06429924070835114
+left_eyebrow: 0.06315640360116959
+nose: 0.04682436212897301
+right_eye: 0.044047847390174866
+left_eye: 0.044552721083164215
+mouth: 0.06319873780012131

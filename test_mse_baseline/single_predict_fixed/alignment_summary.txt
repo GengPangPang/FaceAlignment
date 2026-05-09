@@ -1,0 +1,68 @@
+checkpoint: /home/rum/projects/FaceLandmark/checkpoints/best_epoch.pth
+num_valid_samples: 300
+num_failed_samples: 0
+failed_indices: []
+output_size: 112
+use_quarter_offset: True
+template_112: [[38.2946, 51.6963], [73.5318, 51.5014], [56.0252, 71.7366], [41.5493, 92.3655], [70.7299, 92.2041]]
+saved_visualization_range: [30, 40)
+
+pred_reprojection_error_px_mean: 3.858010768890381
+pred_reprojection_error_px_std: 2.1254963874816895
+pred_reprojection_error_px_median: 3.6377477645874023
+pred_reprojection_error_px_min: 0.8290979266166687
+pred_reprojection_error_px_max: 21.062049865722656
+
+gt_reprojection_error_px_mean: 3.898740291595459
+gt_reprojection_error_px_std: 1.7986493110656738
+gt_reprojection_error_px_median: 3.779216766357422
+gt_reprojection_error_px_min: 0.5798024535179138
+gt_reprojection_error_px_max: 15.12734603881836
+
+gt_under_predM_reprojection_error_px_mean: 4.44424295425415
+gt_under_predM_reprojection_error_px_std: 2.0317583084106445
+gt_under_predM_reprojection_error_px_median: 4.117684364318848
+gt_under_predM_reprojection_error_px_min: 1.1353378295898438
+gt_under_predM_reprojection_error_px_max: 13.984599113464355
+
+pred_eye_angle_before_abs_deg_mean: 7.649511814117432
+pred_eye_angle_before_abs_deg_std: 6.907447814941406
+pred_eye_angle_before_abs_deg_median: 5.943197250366211
+pred_eye_angle_before_abs_deg_min: 0.0
+pred_eye_angle_before_abs_deg_max: 56.310028076171875
+
+gt_eye_angle_before_abs_deg_mean: 7.841787815093994
+gt_eye_angle_before_abs_deg_std: 6.931070327758789
+gt_eye_angle_before_abs_deg_median: 6.297269821166992
+gt_eye_angle_before_abs_deg_min: 0.0
+gt_eye_angle_before_abs_deg_max: 39.875511169433594
+
+pred_eye_angle_after_abs_deg_mean: 2.997218370437622
+pred_eye_angle_after_abs_deg_std: 4.589813232421875
+pred_eye_angle_after_abs_deg_median: 1.8759644031524658
+pred_eye_angle_after_abs_deg_min: 0.007815562188625336
+pred_eye_angle_after_abs_deg_max: 65.13766479492188
+
+gt_eye_angle_after_by_gtM_abs_deg_mean: 2.421586513519287
+gt_eye_angle_after_by_gtM_abs_deg_std: 2.5558292865753174
+gt_eye_angle_after_by_gtM_abs_deg_median: 1.4769725799560547
+gt_eye_angle_after_by_gtM_abs_deg_min: 0.0007991607417352498
+gt_eye_angle_after_by_gtM_abs_deg_max: 13.301115989685059
+
+gt_eye_angle_after_by_predM_abs_deg_mean: 3.0401811599731445
+gt_eye_angle_after_by_predM_abs_deg_std: 3.498734712600708
+gt_eye_angle_after_by_predM_abs_deg_median: 1.8153753280639648
+gt_eye_angle_after_by_predM_abs_deg_min: 0.00484786182641983
+gt_eye_angle_after_by_predM_abs_deg_max: 31.671777725219727
+
+pred_gt_5pt_error_before_px_mean: 4.837568283081055
+pred_gt_5pt_error_before_px_std: 4.38153600692749
+pred_gt_5pt_error_before_px_median: 3.727431535720825
+pred_gt_5pt_error_before_px_min: 1.2501895427703857
+pred_gt_5pt_error_before_px_max: 35.84417724609375
+
+pred_gt_5pt_error_after_predM_px_mean: 2.3785476684570312
+pred_gt_5pt_error_after_predM_px_std: 2.014646530151367
+pred_gt_5pt_error_after_predM_px_median: 1.8443384170532227
+pred_gt_5pt_error_after_predM_px_min: 0.6180931925773621
+pred_gt_5pt_error_after_predM_px_max: 16.723386764526367

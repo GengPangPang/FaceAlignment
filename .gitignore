@@ -26,6 +26,7 @@ Thumbs.db
 
 # PyTorch / model checkpoints
 checkpoints/
+checkpoints_mse_baseline/
 *.pth
 *.pt
 *.ckpt

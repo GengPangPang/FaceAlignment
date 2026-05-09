@@ -44,7 +44,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BATCH_SIZE = 8
 EPOCHS = 200
 LR = 1e-3
-WEIGHT_DECAY = 0.0
+WEIGHT_DECAY = 1e-4
 SAVE_EVERY_EPOCHS = 10
 
 RESUME = False
@@ -104,3 +104,17 @@ ALIGN_TEMPLATE_112 = [
     [41.5493, 92.3655],
     [70.7299, 92.2041],
 ]
+
+# ===============================
+# Loss settings
+# ===============================
+LOSS_TYPE = "foreground_weighted_mse"
+# 可选：
+# "mse"
+# "foreground_weighted_mse"
+# "foreground_jaw_weighted_mse"
+
+FOREGROUND_THRESHOLD = 0.01
+FOREGROUND_WEIGHT = 5.0
+
+JAW_WEIGHT = 1.5
